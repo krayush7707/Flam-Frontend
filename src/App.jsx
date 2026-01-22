@@ -3,7 +3,7 @@
  * Manages WebSocket connection, global state, and component orchestration
  */
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Canvas from './components/Canvas';
 import Toolbar from './components/Toolbar';
 import UserList from './components/UserList';
@@ -150,7 +150,7 @@ function App() {
           <h1 className="text-4xl font-bold text-white mb-2 text-center">
             Collaborative Canvas
           </h1>
-          <p className="text-white/70 text-center mb-6">
+          <p className="text-white-70 text-center mb-6">
             Draw together in real-time
           </p>
 
@@ -164,7 +164,7 @@ function App() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                className="w-full px-4 py-3 bg-white-10 border border-white-20 rounded-lg text-white placeholder-white-50 focus-outline-none focus-ring-2 focus-ring-primary-500"
                 autoFocus
               />
             </div>
@@ -178,8 +178,8 @@ function App() {
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-white/20">
-            <p className="text-white/50 text-xs text-center">
+          <div className="mt-6 pt-6 border-t border-white-20">
+            <p className="text-white-50 text-xs text-center">
               {connected ? '🟢 Connected to server' : '🔴 Connecting...'}
             </p>
           </div>
@@ -220,7 +220,7 @@ function App() {
 
       {/* Connection Status */}
       {!connected && (
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 glass-panel px-4 py-2 animate-fade-in">
+        <div className="fixed bottom-4 left-half translate-x-neg-half glass-panel px-4 py-2 animate-fade-in">
           <p className="text-white text-sm">🔄 Reconnecting...</p>
         </div>
       )}

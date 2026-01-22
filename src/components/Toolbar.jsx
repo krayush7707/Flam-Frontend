@@ -3,7 +3,7 @@
  * Provides brush, eraser, color picker, stroke width, and undo/redo controls
  */
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const PRESET_COLORS = [
     '#000000', '#FFFFFF', '#FF0000', '#00FF00', '#0000FF',
@@ -28,7 +28,7 @@ export default function Toolbar({
     const [customColor, setCustomColor] = useState('#000000');
 
     return (
-        <div className="fixed top-4 left-1/2 -translate-x-1/2 z-10">
+        <div className="fixed top-4 left-half translate-x-neg-half z-10">
             <div className="glass-panel px-6 py-4 flex items-center gap-6 animate-slide-in">
                 {/* Tool Selection */}
                 <div className="flex gap-2">
@@ -54,7 +54,7 @@ export default function Toolbar({
                     </button>
                 </div>
 
-                <div className="w-px h-8 bg-white/20" />
+                <div className="w-px h-8 bg-white-20" />
 
                 {/* Color Picker */}
                 <div className="relative">
@@ -63,7 +63,7 @@ export default function Toolbar({
                             <button
                                 key={color}
                                 onClick={() => onColorChange(color)}
-                                className={`w-8 h-8 rounded-lg border-2 transition-all hover:scale-110 ${currentColor === color ? 'border-white scale-110' : 'border-white/30'
+                                className={`w-8 h-8 rounded-lg border-2 transition-all hover-scale-110 ${currentColor === color ? 'border-white scale-110' : 'border-white-30'
                                     }`}
                                 style={{ backgroundColor: color }}
                                 title={color}
@@ -95,7 +95,7 @@ export default function Toolbar({
                     )}
                 </div>
 
-                <div className="w-px h-8 bg-white/20" />
+                <div className="w-px h-8 bg-white-20" />
 
                 {/* Stroke Width */}
                 <div className="flex flex-col gap-2">
@@ -107,7 +107,7 @@ export default function Toolbar({
                             <button
                                 key={width}
                                 onClick={() => onWidthChange(width)}
-                                className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all hover:bg-white/20 ${currentWidth === width ? 'bg-primary-500' : 'bg-white/10'
+                                className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all hover:bg-white-20 ${currentWidth === width ? 'bg-primary-500' : 'bg-white-10'
                                     }`}
                                 title={`${width}px`}
                             >
@@ -120,7 +120,7 @@ export default function Toolbar({
                     </div>
                 </div>
 
-                <div className="w-px h-8 bg-white/20" />
+                <div className="w-px h-8 bg-white-20" />
 
                 {/* Undo/Redo */}
                 <div className="flex gap-2">

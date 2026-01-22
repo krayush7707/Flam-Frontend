@@ -3,7 +3,7 @@
  * Handles drawing operations, real-time sync, and user interactions
  */
 
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { drawStroke, redrawCanvas, getCanvasCoordinates, throttle } from '../utils/canvasOperations';
 
 export default function Canvas({
@@ -193,7 +193,7 @@ export default function Canvas({
                             className="w-4 h-4 rounded-full border-2 border-white shadow-lg"
                             style={{ backgroundColor: user.color }}
                         />
-                        <div className="absolute top-5 left-5 px-2 py-1 bg-black/75 text-white text-xs rounded whitespace-nowrap">
+                        <div className="absolute top-5 left-5 px-2 py-1 bg-black-75 text-white text-xs rounded whitespace-nowrap">
                             {user.username}
                         </div>
                     </div>
